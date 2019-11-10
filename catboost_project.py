@@ -56,7 +56,7 @@ model = CatBoostRegressor(iterations=1000, depth=3, learning_rate=0.1, loss_func
 #                 solver = 'liblinear',
 #                 max_iter = 1000,
 #         )
-stats = cross_validate(model, X, y, groups=None, scoring='roc_auc', 
+stats = cross_validate(model, X, y, groups=None, scoring='roc_auc',
                        cv=5, n_jobs=2, return_train_score = True)
 stats = pd.DataFrame(stats)
 stats.describe().transpose()
@@ -74,7 +74,7 @@ submit = pd.DataFrame()
 submit["Id"] = test["id"]
 submit["ACTION"] = predictions
 
-submit.to_csv("submission.csv", index = False)
+submit.to_csv("CatboostLogisticRegressor.csv", index = False)
 
 
 
