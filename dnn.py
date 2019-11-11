@@ -14,7 +14,6 @@ from catboost import CatBoostClassifier, Pool
 
 # Model selection
 from sklearn.model_selection import StratifiedKFold
-
 # Metrics
 from sklearn.metrics import roc_auc_score, average_precision_score
 from sklearn.metrics import make_scorer
